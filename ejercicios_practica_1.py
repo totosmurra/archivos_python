@@ -10,6 +10,7 @@
 # Ejercicios con diccionarios
 
 import csv
+from typing import ItemsView
 
 
 def ej1():
@@ -32,6 +33,9 @@ def ej1():
     # Una vez armado el diccionario imprimirlo en pantalla con print
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
+    stock = {}
+    stock = {"tornillos" : 100, "Tuercas" : 150, "Arandelas" : 300} 
+    print (stock)
 
 
 def ej2():
@@ -66,6 +70,44 @@ def ej2():
     # imprimir en pantalla con print el diccionario con el stock final
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
+    while True:
+        print("Cantidad para agregar")
+        cantidad = int(input())
+        
+        if cantidad == "FIN":
+            print("Stock Actual")
+            print(strock)
+            break
+        
+        try:
+            int(cantidad)
+        except:
+            print("No se ingreso un numero")
+            continue
+
+        int(cantidad)
+          
+        print("Articulo a agregar")
+        articulo = input()
+
+        for k,v in strock.items():
+            int(v)
+            if k == articulo:
+                v += cantidad
+                strock[k] = v
+        
+        
+
+
+            
+        
+        
+        
+        
+        
+        
+        print("Stock actual")
+        print(strock)
 
 
 if __name__ == '__main__':
