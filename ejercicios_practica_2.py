@@ -10,6 +10,7 @@
 # Ejercicios con archivos
 
 import csv
+from os import close
 
 
 def ej3():
@@ -27,7 +28,31 @@ def ej3():
     # para cumplir con el enunciado del ejercicio
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
+    csvfile = open(archivo)
     
+    stock = list(csv.DictReader(csvfile))
+
+    csvfile.close()
+
+    print (stock)
+
+    suma_tornillos = 0
+
+    lista_con_los_numeros = []
+
+
+    for i in stock:
+        lista_con_los_numeros.append(i['tornillos'])
+
+    
+    lista_con_los_numeros = [int(i) for i in lista_con_los_numeros]
+
+    suma_tornillos = sum(lista_con_los_numeros)
+        
+    
+    print (suma_tornillos)
+
+
 
 
 def ej4():
@@ -47,6 +72,27 @@ def ej4():
     # utilizando "try except", tema que se verá la clase que viene.
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
+    csvfile = open(archivo)
+    
+    props = list(csv.DictReader(csvfile))
+
+    csvfile.close()
+
+    ambs2 = 0
+
+    ambs3 = 0
+
+    for i in props:
+        try:
+            if i['ambientes'] == '2':
+                ambs2 += 1
+            elif i['ambientes'] == '3':
+                ambs3 += 1
+        except:
+            continue
+
+    print("Dos Ambientes:", ambs2)    
+    print("Tres Ambientes", ambs3)
 
 
 if __name__ == '__main__':
