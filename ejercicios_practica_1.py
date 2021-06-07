@@ -72,7 +72,7 @@ def ej2():
     # Comenzar aquí, recuerde el identado dentro de esta funcion
     while True:
         print("Cantidad para agregar")
-        cantidad = int(input())
+        cantidad = input()
         
         if cantidad == "FIN":
             print("Stock Actual")
@@ -80,7 +80,7 @@ def ej2():
             break
         
         try:
-            int(cantidad)
+            cantidad = int(cantidad)
         except:
             print("No se ingreso un numero")
             continue
